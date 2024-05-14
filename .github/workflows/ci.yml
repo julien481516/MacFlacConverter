@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Apple Certificate
       run: |
-        echo "${{ secrets.CERT_PASSWORD }}" | base64 --decode > /tmp/cert_password.txt
-        echo "${{ secrets.APPLE_CERT }}" | base64 --decode > /tmp/apple_cert.p12
+        echo "${{ secrets.CERT_PASSWORD }}" | base64 --decode > /tmp/CERT_PASSWORD.txt
+        echo "${{ secrets.APPLE_CERT }}" | base64 --decode > /tmp/APPLE_CERT.p12
         security create-keychain -p "temp-password" build.keychain
         security default-keychain -s build.keychain
         security unlock-keychain -p "temp-password" build.keychain
@@ -24,4 +24,4 @@ jobs:
         CERT_PASSWORD: ${{ secrets.CERT_PASSWORD }}
         APPLE_CERT: ${{ secrets.APPLE_CERT }}
     - name: Build the Project
-      run: xcodebuild -project YourProject.xcodeproj -scheme YourScheme -sdk macosx
+      run: xcodebuild -project MacAudioConverter.xcodeproj -scheme MacAudioConverter -sdk macosx
