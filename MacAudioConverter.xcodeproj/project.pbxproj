@@ -8,18 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0D825BCB2BE4EE970030200C /* MacAudioConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D825BCA2BE4EE970030200C /* MacAudioConverterApp.swift */; };
-		0D825BCD2BE4EE970030200C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D825BCC2BE4EE970030200C /* ContentView.swift */; };
+		0D825BCD2BE4EE970030200C /* ConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D825BCC2BE4EE970030200C /* ConvertView.swift */; };
 		0D825BCF2BE4EE980030200C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D825BCE2BE4EE980030200C /* Assets.xcassets */; };
 		0D825BD22BE4EE980030200C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D825BD12BE4EE980030200C /* Preview Assets.xcassets */; };
+		0D825BDB2BE4EF7C0030200C /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D825BDA2BE4EF7C0030200C /* DragAndDropView.swift */; };
+		0D825BDD2BE4F26D0030200C /* ConversionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D825BDC2BE4F26D0030200C /* ConversionManager.swift */; };
+		0DE7757C2BF21D3700813874 /* FileImported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7757B2BF21D3700813874 /* FileImported.swift */; };
+		0DE7757F2BF21D5600813874 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7757E2BF21D5600813874 /* CustomButtonStyle.swift */; };
+		0DE775812BF220DE00813874 /* ConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE775802BF220DE00813874 /* ConvertViewModel.swift */; };
+		0DE775832BF27C4900813874 /* AudioFileInfoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE775822BF27C4900813874 /* AudioFileInfoUtils.swift */; };
+		0DE775872BF28D1600813874 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE775862BF28D1600813874 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D825BC72BE4EE970030200C /* MacAudioConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacAudioConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D825BCA2BE4EE970030200C /* MacAudioConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAudioConverterApp.swift; sourceTree = "<group>"; };
-		0D825BCC2BE4EE970030200C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0D825BCC2BE4EE970030200C /* ConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertView.swift; sourceTree = "<group>"; };
 		0D825BCE2BE4EE980030200C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D825BD12BE4EE980030200C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0D825BD32BE4EE980030200C /* MacAudioConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacAudioConverter.entitlements; sourceTree = "<group>"; };
+		0D825BDA2BE4EF7C0030200C /* DragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropView.swift; sourceTree = "<group>"; };
+		0D825BDC2BE4F26D0030200C /* ConversionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionManager.swift; sourceTree = "<group>"; };
+		0DE7757A2BF2160600813874 /* MacAudioConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacAudioConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE7757B2BF21D3700813874 /* FileImported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileImported.swift; sourceTree = "<group>"; };
+		0DE7757E2BF21D5600813874 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		0DE775802BF220DE00813874 /* ConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewModel.swift; sourceTree = "<group>"; };
+		0DE775822BF27C4900813874 /* AudioFileInfoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileInfoUtils.swift; sourceTree = "<group>"; };
+		0DE775862BF28D1600813874 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,26 +51,25 @@
 			isa = PBXGroup;
 			children = (
 				0D825BC92BE4EE970030200C /* MacAudioConverter */,
-				0D825BC82BE4EE970030200C /* Products */,
+				0DE7757A2BF2160600813874 /* MacAudioConverter.app */,
 			);
-			sourceTree = "<group>";
-		};
-		0D825BC82BE4EE970030200C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D825BC72BE4EE970030200C /* MacAudioConverter.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0D825BC92BE4EE970030200C /* MacAudioConverter */ = {
 			isa = PBXGroup;
 			children = (
 				0D825BCA2BE4EE970030200C /* MacAudioConverterApp.swift */,
-				0D825BCC2BE4EE970030200C /* ContentView.swift */,
+				0D825BCC2BE4EE970030200C /* ConvertView.swift */,
+				0DE775802BF220DE00813874 /* ConvertViewModel.swift */,
+				0D825BDC2BE4F26D0030200C /* ConversionManager.swift */,
 				0D825BCE2BE4EE980030200C /* Assets.xcassets */,
 				0D825BD32BE4EE980030200C /* MacAudioConverter.entitlements */,
+				0DE7757D2BF21D4C00813874 /* UI */,
 				0D825BD02BE4EE980030200C /* Preview Content */,
+				0D825BDA2BE4EF7C0030200C /* DragAndDropView.swift */,
+				0DE7757B2BF21D3700813874 /* FileImported.swift */,
+				0DE775822BF27C4900813874 /* AudioFileInfoUtils.swift */,
+				0DE775862BF28D1600813874 /* Strings.swift */,
 			);
 			path = MacAudioConverter;
 			sourceTree = "<group>";
@@ -67,6 +80,14 @@
 				0D825BD12BE4EE980030200C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0DE7757D2BF21D4C00813874 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0DE7757E2BF21D5600813874 /* CustomButtonStyle.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,7 +107,7 @@
 			);
 			name = MacAudioConverter;
 			productName = MacAudioConverter;
-			productReference = 0D825BC72BE4EE970030200C /* MacAudioConverter.app */;
+			productReference = 0DE7757A2BF2160600813874 /* MacAudioConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +134,9 @@
 				Base,
 			);
 			mainGroup = 0D825BBE2BE4EE970030200C;
-			productRefGroup = 0D825BC82BE4EE970030200C /* Products */;
+			packageReferences = (
+			);
+			productRefGroup = 0D825BBE2BE4EE970030200C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -139,8 +162,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D825BCD2BE4EE970030200C /* ContentView.swift in Sources */,
+				0DE7757F2BF21D5600813874 /* CustomButtonStyle.swift in Sources */,
+				0DE775872BF28D1600813874 /* Strings.swift in Sources */,
+				0D825BCD2BE4EE970030200C /* ConvertView.swift in Sources */,
+				0D825BDB2BE4EF7C0030200C /* DragAndDropView.swift in Sources */,
+				0DE7757C2BF21D3700813874 /* FileImported.swift in Sources */,
+				0DE775832BF27C4900813874 /* AudioFileInfoUtils.swift in Sources */,
 				0D825BCB2BE4EE970030200C /* MacAudioConverterApp.swift in Sources */,
+				0DE775812BF220DE00813874 /* ConvertViewModel.swift in Sources */,
+				0D825BDD2BE4F26D0030200C /* ConversionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +236,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -262,6 +293,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -271,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacAudioConverter/MacAudioConverter.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -287,6 +320,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = julienagostini.MacAudioConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -298,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacAudioConverter/MacAudioConverter.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -314,6 +349,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = julienagostini.MacAudioConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
