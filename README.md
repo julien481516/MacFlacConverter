@@ -33,7 +33,7 @@ Preserving lossless files is crucial for maintaining the highest quality audio e
     ```
 
 3. **Build and run the project**:
-    - Select the target device (e.g., My Mac 🤠).
+    - Select the target device (e.g., probably Your Mac).
     - PLEASE Press `Cmd + R` to build and run the app (shortcuts, such a blast😎).
 
 ## Usage
