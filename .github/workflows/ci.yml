@@ -1,4 +1,4 @@
-name: CI
+name: 🔑 Sign & Build ⚒️
 
 on:
   push:
