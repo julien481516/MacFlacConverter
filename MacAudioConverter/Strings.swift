@@ -9,12 +9,12 @@ import Foundation
 
 struct Strings {
     struct AppGenerals {
-        static let appTitle = "My Audio Conversion App"
+        static let appTitle = "MacFlacConverter"
     }
     
     struct Labels {
         static let totalFilesImported = "Total files imported :"
         static let convert = "Convert"
-        static let reset = "Reset"
+        static let clearAll = "Clear all"
     }
 }
