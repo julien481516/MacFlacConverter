@@ -51,20 +51,9 @@ enum AudioCodec: String {
     case flac = "FLAC"
 }
 
-enum AudioChannelConfiguration: String {
-    case mono = "Mono"
-    case stereo = "Stereo"
-    case surround = "Surround"
-    
-    var numberOfChannels: Int {
-        switch self {
-        case .mono:
-            return 1
-        case .stereo:
-            return 2
-        case .surround:
-            return 3
-        }
-    }
+enum AudioChannelConfiguration: Int {
+    case mono = 1
+    case stereo = 2
+    case surround = 6
+    case other = 0
 }
-

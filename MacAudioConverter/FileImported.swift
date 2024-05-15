@@ -10,6 +10,7 @@ import Foundation
 struct FileImported: Identifiable, Hashable, Comparable {
     let id = UUID()
     let fileURL: URL
+    var audioFileInfo: AudioFileInfo?
     
     var fileName: String {
         let fileNameWithExtension = fileURL.lastPathComponent.removingPercentEncoding ?? ""
@@ -18,5 +19,14 @@ struct FileImported: Identifiable, Hashable, Comparable {
     
     static func < (lhs: FileImported, rhs: FileImported) -> Bool {
         lhs.fileName < rhs.fileName
+    }
+    
+    static func == (lhs: FileImported, rhs: FileImported) -> Bool {
+        lhs.fileURL == rhs.fileURL
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(fileURL)
     }
 }

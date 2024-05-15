@@ -8,6 +8,7 @@
 
 import AVFoundation
 import CoreMedia
+import SwiftUI
 
 class ConversionManager {
     static let shared: ConversionManager = ConversionManager()
@@ -35,7 +36,7 @@ class ConversionManager {
             
             let audioFileInfo = AudioFileInfo(
                 sampleRate: sampleRate,
-                channels: AudioChannelConfiguration(rawValue: "\(channels)") ?? .stereo,
+                channels: AudioChannelConfiguration(rawValue: channels) ?? .stereo,
                 duration: duration,
                 bitrate: bitrate,
                 format: .flac,
@@ -163,14 +164,14 @@ class ConversionManager {
         wavHeader.append(contentsOf: subchunk1SizeBytes)
         var audioFormatBytes = withUnsafeBytes(of: UInt16(1).littleEndian) { Data($0) }
         wavHeader.append(contentsOf: audioFormatBytes)
-        var numChannelsBytes = withUnsafeBytes(of: UInt16(fileInfo.channels.numberOfChannels).littleEndian) { Data($0) }
+        var numChannelsBytes = withUnsafeBytes(of: UInt16(fileInfo.channels.rawValue).littleEndian) { Data($0) }
         wavHeader.append(contentsOf: numChannelsBytes)
         var sampleRateBytes = withUnsafeBytes(of: UInt32(fileInfo.sampleRate).littleEndian) { Data($0) }
         wavHeader.append(contentsOf: sampleRateBytes)
-        let byteRate = fileInfo.sampleRate * fileInfo.channels.numberOfChannels * 16 / 8
+        let byteRate = fileInfo.sampleRate * fileInfo.channels.rawValue * 16 / 8
         var byteRateBytes = withUnsafeBytes(of: UInt32(byteRate).littleEndian) { Data($0) }
         wavHeader.append(contentsOf: byteRateBytes)
-        let blockAlign = fileInfo.channels.numberOfChannels * 16 / 8
+        let blockAlign = fileInfo.channels.rawValue * 16 / 8
         var blockAlignBytes = withUnsafeBytes(of: UInt16(blockAlign).littleEndian) { Data($0) }
         wavHeader.append(contentsOf: blockAlignBytes)
         var bitsPerSampleBytes = withUnsafeBytes(of: UInt16(16).littleEndian) { Data($0) }

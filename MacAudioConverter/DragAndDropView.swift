@@ -12,34 +12,38 @@ struct DragAndDropView: View {
     @ObservedObject var viewModel: ConvertViewModel
     
     @State private var showAlert = false
+    @State private var isTargeted = false
     @State private var alertMessage = ""
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 0) {
             Text("Drag and drop FLAC files here")
+                .font(.system(size: 20))
                 .frame(width: 300, height: 150)
-                .background(Color.gray.opacity(0.2))
+                
                 .cornerRadius(8)
-                .onDrop(of: [.fileURL], isTargeted: nil) { providers in
-                    DispatchQueue.main.async {
-                        handleDrop(providers: providers)
-                    }
-                    return true
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Unsupported File Format"),
-                          message: Text(alertMessage),
-                          dismissButton: .default(Text("OK")))
-                }
-
             Image(systemName: "plus")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60)
+                .foregroundStyle(.gray)
+                .frame(width: 70)
                 .padding(.bottom, 50)
+                .symbolEffect(.bounce, value: true)
         }
+        .background(isTargeted ? Color.green.opacity(0.2) : Color.gray.opacity(0.2))
         .cornerRadius(13.0)
         .padding(50)
+        .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
+            DispatchQueue.main.async {
+                handleDrop(providers: providers)
+            }
+            return true
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Unsupported File Format"),
+                  message: Text(alertMessage),
+                  dismissButton: .default(Text("OK")))
+        }
     }
 
     private func handleDrop(providers: [NSItemProvider]) {
@@ -54,7 +58,7 @@ struct DragAndDropView: View {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            alertMessage = "The file \(url.lastPathComponent) is not a supported format. Please drop a FLAC file."
+                            alertMessage = "Unsupported format. Please drop one, or more FLAC files."
                             showAlert = true
                         }
                     }
@@ -68,4 +72,8 @@ struct DragAndDropView: View {
             }
         }
     }
+}
+
+#Preview {
+    DragAndDropView(viewModel: ConvertViewModel())
 }
